@@ -1,0 +1,20 @@
+<html>
+<body>
+    <h1>Ben's Video Chat App</h1> 
+<form name="form1" method="POST" action="/private_room">
+    <label for="username">User Name:</label><br>
+    <input type="text" id="username" name="username" ><br>
+    
+    <input type ="hidden"name ="roomId" value = "roomId" />
+    <label for="lname">Room ID:</label><br> 
+    <input type="text" id="roomid" name="roomid"><br>
+    <label for="lname">Please Enter Room Id You want To Join</label><br> 
+    <label for="lname">Example: Room,room1,room2</label><br> 
+    <input type="submit" value="Begin Video Call">
+</form> 
+<script>
+    const ROOM_ID = "<%= roomId %>";
+    document.getElementById("roomId").innerHTML = ROOM_ID;
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Video call </title>
+    <h1><span id="name"></span></h1>
+    <h2><span id="roomid"></span></h2>
+    <h3><span id="roomId"></span></h3> 
+
+    <style>
+      #video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 300px);
+        grid-auto-rows: 300px;
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #chat-history {
+        width: 300px;
+        height: 150px;
+        overflow-y: scroll;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="video-grid"></div>
+    <div id="chat-history"></div>
+    <input id="chat-input" placeholder="Message..." />
+    <button id="chat-send">Send</button>
+    <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+      const NAME = "<%= name %>";
+      const ROOM_ID2 = "<%= roomid %>";
+      document.getElementById("name").innerHTML = NAME;
+      document.getElementById("roomid").innerHTML = ROOM_ID2;
+
+      const ROOM_ID = "<%= roomId %>";
+      document.getElementById("roomId").innerHTML = ROOM_ID;
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
